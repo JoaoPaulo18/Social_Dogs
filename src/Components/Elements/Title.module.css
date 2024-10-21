@@ -1,0 +1,21 @@
+.title {
+  font-family: var(--type-second);
+  font-size: 2rem;
+  color: black;
+  position: relative;
+  font-size: 3rem;
+  z-index: 10;
+  line-height: 3rem;
+}
+.title::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: #fb1;
+  position: absolute;
+  z-index: -1;
+  bottom: 4px;
+  left: -8px;
+}

@@ -1,0 +1,28 @@
+.header {
+  background: white;
+  box-shadow: 0 0px 3px 0 rgba(44, 44, 44, 0.3);
+  padding: 1.2rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50rem;
+  margin: 0rem auto;
+  padding: 0 1rem;
+}
+
+.wrapper a:last-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.wrapper a:last-child svg {
+  position: relative;
+  top: -2px;
+}

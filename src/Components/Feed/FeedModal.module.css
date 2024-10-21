@@ -1,0 +1,156 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 44, 44, 0.5);
+  z-index: 100;
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: PopUp 0.3s ease forwards;
+}
+@keyframes PopUp {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.wrapper img {
+  width: 100%;
+  max-width: 576px;
+  height: 576px;
+  border-radius: 5px 0 0 5px;
+  object-fit: cover;
+}
+
+.infos {
+  background: white;
+  border-radius: 0 5px 5px 0;
+  display: grid;
+  grid-template-rows: max-content minmax(240px, 4fr) max-content;
+  max-height: 576px;
+}
+.gridBox {
+  padding: 2rem 2rem 0 2rem;
+}
+.Author {
+  display: flex;
+  align-items: center;
+  gap: 9rem;
+  color: #aaa;
+}
+.Author span {
+  display: flex;
+  align-items: center;
+}
+.Author span svg {
+  margin-right: 0.5rem;
+}
+.age {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+.age span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.age span::before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  background: #000;
+}
+
+.commentsList {
+  overflow-y: auto;
+  height: 100%;
+  max-height: 300px;
+  padding: 1rem 2rem;
+}
+.commentsList li {
+  margin: 0.5rem 0;
+}
+.commentsList span {
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+.form textarea {
+  border: none;
+  background: #eee;
+  border-radius: 5px;
+  padding: 0.5rem;
+  transition: 0.3s;
+  outline: none;
+  font-family: var(--type-first);
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+}
+.form textarea:is(:hover, :focus) {
+  box-shadow: 0 0px 0 1px #fb1, 0 0 2px 4px #fea;
+  background: white;
+}
+
+.form button {
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+.form button:hover svg > *,
+.form button:hover svg > g > * {
+  stroke: #fb1;
+  fill: #fea;
+}
+.form button:hover svg > g > * {
+  animation: Blink 0.3s ease infinite alternate;
+}
+@keyframes Blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 650px) {
+  .wrapper {
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 100%;
+  }
+  .wrapper img {
+    height: auto;
+    max-width: 450px;
+    border-radius: 5px 0 0 0;
+  }
+  .infos {
+    border-radius: 0 0 0 5px;
+  }
+  .Author {
+    gap: 0;
+    justify-content: space-between;
+  }
+}

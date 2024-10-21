@@ -1,0 +1,22 @@
+.button {
+  display: block;
+  background: #fb1;
+  color: #764701;
+  border: none;
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 100;
+  min-width: 8rem;
+  transition: 0.1s;
+  margin: 1rem 0;
+}
+
+.button:is(:hover, :focus) {
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

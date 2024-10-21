@@ -1,0 +1,8 @@
+.footer {
+  display: grid;
+  background: #fb1;
+  place-items: center;
+  padding: 3rem 0;
+  gap: 1.5rem;
+  color: #764701;
+}

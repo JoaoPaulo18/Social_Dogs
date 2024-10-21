@@ -1,0 +1,55 @@
+:root {
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-second: "Spectral", Georgia;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 4rem;
+  color: #333;
+  font-family: var(--type-first);
+}
+main {
+  min-height: calc(100vh - 4rem);
+  height: 100%;
+}
+ul {
+  list-style: none;
+}
+
+li,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.container {
+  max-width: 50rem;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+.Error {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 100;
+  color: red;
+}
+.animLeft {
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: Slide 0.3s ease forwards;
+}
+
+@keyframes Slide {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

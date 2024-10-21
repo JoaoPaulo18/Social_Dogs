@@ -1,0 +1,129 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 0.5rem;
+}
+
+.ulNav {
+  display: flex;
+  gap: 0.875rem;
+}
+.ulNav button,
+.ulNav a {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.45rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #eee;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+}
+.ulNav button:is(:hover, :focus),
+.ulNav a:is(:hover, :focus) {
+  border-color: #333;
+  box-shadow: 0 0 0px 3px #eee;
+  background: white;
+}
+.ulNav a:global(.active) {
+  border-color: #fb1;
+  box-shadow: 0 0 0px 3px #fea;
+  background: white;
+}
+.ulNav a:global(.active) svg > * {
+  fill: #fb1;
+}
+
+/* MOBILE DESIGN */
+.menuBtn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 5px;
+  background: #eee;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.menuBtn.active {
+  border-color: #fb1;
+  box-shadow: 0 0 0px 3px #fea;
+  background: white;
+}
+.menuBtn:is(:focus, :hover) {
+  border-color: #fb1;
+  box-shadow: 0 0 0px 3px #fea;
+  background: white;
+}
+.menuBtn:is(:focus, :hover)::after {
+  background: #fb1;
+  color: #fb1;
+}
+.menuBtn.active::after {
+  background: #fb1;
+  color: #fb1;
+  transform: rotate(90deg);
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  box-shadow: 0 8px 0 0 currentColor, 0 -8px 0 0 currentColor;
+}
+.menuBtn::after {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 2px;
+  background: #333;
+  box-shadow: 0 6px 0 0 currentColor, 0 -6px 0 0 currentColor;
+  transition: 0.2s ease;
+}
+.menuBtn.active ~ .ulMob {
+  opacity: 1;
+  right: 0;
+  pointer-events: all;
+}
+
+.ulMob {
+  position: absolute;
+  background: white;
+  box-shadow: 0 1px 2px 0 rgba(44, 44, 44, 0.3);
+  display: flex;
+  flex-direction: column;
+  right: 10px;
+  opacity: 0;
+  top: 70px;
+  padding: 0 1rem;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  z-index: 100;
+  pointer-events: none;
+}
+.ulMob a,
+.ulMob button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+}
+.ulMob a {
+  border-bottom: 1px solid #eee;
+}
+
+.ulMob a:is(:focus, :hover) svg > *,
+.ulMob button:is(:focus, :hover) svg > * {
+  fill: #fb1;
+}
+
+@media (max-width: 340px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+}
